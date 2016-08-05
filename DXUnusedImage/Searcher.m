@@ -26,7 +26,6 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        // Setup the queue
         _queue = [[NSOperationQueue alloc] init];
         
         self.imageNames = [NSMutableDictionary dictionary];
@@ -37,7 +36,6 @@
 }
 
 - (void)start {
-    // Start the search
     NSInvocationOperation *searchOperation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(runImageSearch:) object:self.projectPath];
     [_queue addOperation:searchOperation];
 }
