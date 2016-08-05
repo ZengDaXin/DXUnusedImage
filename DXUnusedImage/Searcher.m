@@ -111,9 +111,8 @@
             }
             
             BOOL isImagePathEmpty = [imagePath isEqualToString:@""];
-            if (!isImagePathEmpty) {
+            if (imagePath && !isImagePathEmpty) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    
                     if (self.delegate && [self.delegate respondsToSelector:@selector(searcher:didFindUnusedImage:)]) {
                         [self.delegate searcher:self didFindUnusedImage:imagePath];
                     }
