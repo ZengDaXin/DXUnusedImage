@@ -1,0 +1,7 @@
+language: objective-c
+osx_image: xcode7.3
+xcode_project: DXUnusedImage.xcodeproj
+xcode_scheme: DXUnusedImage
+
+script:
+- xctool -project DXUnusedImage.xcodeproj -scheme DXUnusedImage build test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
